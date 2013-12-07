@@ -6,7 +6,7 @@
 # catalog-version 1.2
 Name:		texlive-cjk-ko
 Version:	1.2
-Release:	4
+Release:	5
 Summary:	Extension of the CJK package for Korean typesetting
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/language/korean/cjk-ko

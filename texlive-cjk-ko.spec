@@ -5,8 +5,8 @@ Summary:	Extension of the CJK package for Korean typesetting
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/language/korean/cjk-ko
 License:	OTHER-FREE
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/cjk-ko.r63561.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/cjk-ko.doc.r63561.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/cjk-ko.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/cjk-ko.doc.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg

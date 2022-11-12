@@ -1,18 +1,12 @@
-# revision 32342
-# category Package
-# catalog-ctan /language/korean/cjk-ko
-# catalog-date 2013-12-06 13:41:45 +0100
-# catalog-license other-free
-# catalog-version 1.3
 Name:		texlive-cjk-ko
-Version:	1.8
-Release:	2
+Version:	63561
+Release:	1
 Summary:	Extension of the CJK package for Korean typesetting
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/language/korean/cjk-ko
 License:	OTHER-FREE
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/cjk-ko.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/cjk-ko.doc.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/cjk-ko.r63561.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/cjk-ko.doc.r63561.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -24,12 +18,12 @@ documents with the help of the LaTeX2e CJK package. The package
 requires nanumtype1 fonts.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -46,7 +40,7 @@ requires nanumtype1 fonts.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1
+%autosetup -p1 -c -a1
 
 %build
 

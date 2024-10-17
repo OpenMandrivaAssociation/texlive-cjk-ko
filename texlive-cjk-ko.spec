@@ -3,7 +3,7 @@ Version:	70300
 Release:	1
 Summary:	Extension of the CJK package for Korean typesetting
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/language/korean/cjk-ko
+URL:		https://www.ctan.org/tex-archive/language/korean/cjk-ko
 License:	OTHER-FREE
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/cjk-ko.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/cjk-ko.doc.r%{version}.tar.xz

@@ -1,49 +1,27 @@
-Name:		texlive-cjk-ko
-Version:	70300
-Release:	1
+%global tl_name cjk-ko
+%global tl_revision 79618
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	2.5
+Release:	%{tl_revision}.1
 Summary:	Extension of the CJK package for Korean typesetting
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/language/korean/cjk-ko
-License:	OTHER-FREE
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/cjk-ko.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/cjk-ko.doc.r%{version}.tar.xz
+License:	gpl lppl1.3c pd
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/cjk-ko.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/cjk-ko.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Requires:	texlive(cjk)
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The package supports typesetting UTF-8-encoded modern Korean
-documents with the help of the LaTeX2e CJK package. The package
+The package supports typesetting UTF-8-encoded modern Korean documents
+with the help of the LaTeX2e CJK package. It provides some enhanced
+features focused on Korean typesetting culture, one of them being
+allowing line-break between Latin and CJK characters. The package
 requires nanumtype1 fonts.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/latex/cjk-ko/cjkutf8-josa.sty
-%{_texmfdistdir}/tex/latex/cjk-ko/cjkutf8-ko.sty
-%{_texmfdistdir}/tex/latex/cjk-ko/cjkutf8-nanummjhanja.sty
-%{_texmfdistdir}/tex/latex/cjk-ko/kolabels-utf.sty
-%{_texmfdistdir}/tex/latex/cjk-ko/konames-utf.sty
-%{_texmfdistdir}/tex/latex/cjk-ko/kotex.sty
-%doc %{_texmfdistdir}/doc/latex/cjk-ko/ChangeLog
-%doc %{_texmfdistdir}/doc/latex/cjk-ko/README
-%doc %{_texmfdistdir}/doc/latex/cjk-ko/cjk-ko-doc.pdf
-%doc %{_texmfdistdir}/doc/latex/cjk-ko/cjk-ko-doc.tex
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc %{buildroot}%{_texmfdistdir}
